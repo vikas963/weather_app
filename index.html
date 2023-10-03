@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card">
+        <div class="search">
+            <input type="text" placeholder="Enter city" spellcheck="false">
+            <button><img src="search.png" ></button>
+        </div>
+    <div class="weather">
+        <img src="rain.png" class="weather-icon">
+        <h1 class="temp">33°C</h1>
+        <h2 class="city">Gwalior</h2>
+        <div class="details">
+            <div class="col">
+                <img src="humidity.png">
+                <div><p class="humidity">50%</p>
+                <p>Humidity</p></div>
+            </div>
+        <div class="col">
+            <img src="wind.png">
+            <div><p class="wind">15 km/h</p>
+            <p>Wind Speed</p></div>
+        </div>
+    </div>
+    </div>
+    </div>
+</div>
+
+<script>
+    const apiKey="29b8fb5d29a11ed810decee48b38bd73"
+    const apiUrl="https://api.openweathermap.org/data/2.5/weather?units=metric&q=bangalore"
+
+    async function chechWeather(city){
+        const response=await fetch(apiUrl + city + `appid=${apiKey}`);
+        var data=await response.json();
+    }
+</script>
+</body>
+</html>
